@@ -1,0 +1,165 @@
+@import "_colors-and-fonts";
+@import '_mixins';
+
+
+.main-wrapper{
+    padding:0;
+    margin: 0;
+    background-color: $white-clr;
+    height: 100vh;
+    @include flex-centered;
+       
+}
+
+.inner-wrapper{
+    background-color: $inner-bck-clr;
+    width: 90vw;
+    height: 80vh;
+
+
+    &__logo{
+        font-family: $logo-font;
+        border: 1px solid $black-clr;
+        padding: 0.5rem 1.5rem;
+        font-size: 1.8rem;
+        display: inline-block;
+        margin-left: 3rem;
+        transform: translateY(-50%);
+        }
+}
+
+.drinks-menu{
+   
+    margin: 3rem 6rem;
+    // height: 70%;
+}
+
+.menu-header{
+    margin-bottom: 0.5rem;
+    &__nav{
+        padding: 1rem 0;
+    }
+    &__list{
+        width: 100%;
+        margin-left: 2rem;
+        display: flex;
+        justify-content: space-around;
+       
+    }
+    &__list-item{
+        color: $nav-items-clr;
+        font-family: $main-font;
+        font-size: 0.8rem;
+        transition: all .3s;
+        padding: 0.5rem 0;
+        position: relative;
+        &:hover{
+            color: $black-clr;
+            cursor: pointer;
+
+        }
+        &::after{
+            content:"";
+            width: 0%;
+            height: 1px;
+            background-color: $nav-items-clr;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: all ease-in-out 0.2s;
+        }
+        &:hover::after{
+            width: 65%
+        }
+
+    }
+}
+.menu-items{
+    overflow-y: scroll;
+    padding: 1rem;
+    height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    &::-webkit-scrollbar{
+        width: 3px;
+    }
+    &::-webkit-scrollbar-button{
+        display: none;
+    }
+    &::-webkit-scrollbar-track{
+        border:none;
+        background-color: $nav-items-clr;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: $nav-items-clr;
+        border-radius: 1px;
+    }
+    &__item{
+        width: 25%;
+        height: 40vh;
+        @include flex-centered;
+        margin: 1rem 2rem;
+        color: $white-clr;
+        font-family: $main-font;
+        font-weight: 600;
+        font-size: 2.5rem;
+        text-align: center;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25);
+        transition: all .2s;
+        &:hover{
+            border: 4px solid $figure-hover-brd-clr;
+        }
+    }
+
+    &__item1{
+        background: url(../assets/bijou.jpg) center top;
+        background-size: cover;
+       
+
+    }
+    &__item2{
+        background: url(../assets/eggnogg.jpg) center top;
+        background-size: cover;
+    }
+    &__item3{
+        background: url(../assets/mojito.jpg) center top;
+        background-size: cover;
+    }
+    &__item4{
+        background: url(../assets/negroni.jpg) center top;
+        background-size: cover;
+    }
+    &__item5{
+        background: url(../assets/rattlesnake.jpg) center;
+        background-size: cover;
+    }
+    &__item6{
+        background: url(../assets/zinger.jpg) center top;
+        background-size: cover;
+    }
+}
+.footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 4rem;
+    font-family: $main-font;
+    font-size: .8rem;
+    color: $gray-footer-fnt-clr;
+
+    .footer__email{
+        & a{
+            color: $black-clr;
+        }
+    }
+}
+
+
+
